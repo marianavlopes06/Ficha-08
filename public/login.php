@@ -7,14 +7,14 @@
     <title>ISEP Ginásio</title>
 
     <!-- Bootstrap CSS & custom CSS -->
-    <link rel="stylesheet" href="../frontend/assets/bootstrap/bootstrap.min.css">
-    <link rel="stylesheet" href="../frontend/assets/css/estilos.css">
+    <link rel="stylesheet" href="assets/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/estilos.css">
 
     <!-- favicon -->
-    <link rel="shortcut icon" href="../frontend/assets/img/gym125.png" type="image/png">
+    <link rel="shortcut icon" href="assets/images/gym125.png" type="image/png">
 
     <!-- Font Awesome -->
-    <link rel="stylesheet" href="../frontend/assets/fontawesome/all.min.css">
+    <link rel="stylesheet" href="assets/fontawesome/all.min.css">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Titillium+Web:wght@300;700&display=swap" rel="stylesheet">
@@ -31,13 +31,13 @@
                 <div class="card p-4">
                     <div class="d-flex align-items-center justify-content-center my-4">
                         <!-- Imagem do ginásio + texto -->
-                        <img src="../frontend/assets/images/gym125.png" alt="Logotipo do ginásio"> 
+                        <img src="assets/images/gym125.png" alt="Logotipo do ginásio"> 
                         <h2><strong>ISEP - Ginásio</strong></h2>
                     </div>
                     <div class="row">
                         <div class="col">
                             <!-- Formulário -->
-                            <form action="../backend/index.html" method="post">
+                            <form action="../private/index.php" method="post">
                                 <div class="mb-3">
                                     <!-- Utilizador -->
                                     <label for="email" class="form-label">Utilizador</label>
