@@ -43,13 +43,13 @@
                                 <td>[Telefone]</td>
                                 <td>[sistema_saude]</td>
                                 <td class="text-center">
-                                    <a href="detalhes.html" class="btn btn-sm btn-outline-primary me-1"> <i
+                                    <a href="detalhes.php" class="btn btn-sm btn-outline-primary me-1"> <i
                                             class="fa-solid fa-eye"></i>
                                     </a>
-                                    <a href="editar.html" class="btn btn-sm btn-outline-warning me-1"> <i
+                                    <a href="editar.php" class="btn btn-sm btn-outline-warning me-1"> <i
                                             class="fa-regular fa-pen-to-square"></i>
                                     </a>
-                                    <a href="apagar.html" class="btn btn-sm btn-outline-danger">
+                                    <a href="apagar.php" class="btn btn-sm btn-outline-danger">
                                         <i class="fa-solid fa-trash-can"></i>
                                     </a>
                                 </td>

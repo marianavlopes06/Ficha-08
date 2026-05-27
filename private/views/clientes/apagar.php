@@ -22,7 +22,7 @@
                                 class="d-block"><i class="fa-solid fa-phone me-2"></i><strong>93123456</strong></span>
                         </div>
                         <div class="d-flex justify-content-center gap-3">
-                            <a href="lista.html" class="btn btn-outline-secondary px-4">
+                            <a href="lista.php" class="btn btn-outline-secondary px-4">
                                 <i class="fa-solid fa-xmark me-2"></i>Não
                             </a>
                             <a href="#" class="btn btn-danger px-4">

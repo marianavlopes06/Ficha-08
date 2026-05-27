@@ -63,7 +63,7 @@
                             </div>
                         </div>
                         <div class="d-flex justify-content-end">
-                            <a href="lista.html" class="btn btn-outline-secondary">
+                            <a href="lista.php" class="btn btn-outline-secondary">
                                 <i class="fa-solid fa-arrow-left me-1"></i> Voltar
                             </a>
                         </div>

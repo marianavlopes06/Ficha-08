@@ -111,7 +111,7 @@
 
                             <!-- Botões -->
                             <div class="d-flex justify-content-end gap-2 mb-4">
-                                <a href="lista.html" class="btn btn-outline-secondary">
+                                <a href="lista.php" class="btn btn-outline-secondary">
                                     <i class="fa-solid fa-xmark me-1"></i> Cancelar
                                 </a>
                                 <button type="submit" class="btn btn-primary">
