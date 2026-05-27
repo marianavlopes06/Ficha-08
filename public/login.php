@@ -19,12 +19,12 @@
                             <div class="mb-3">
                                 <!-- Utilizador -->
                                 <label for="email" class="form-label">Utilizador</label>
-                                <input type="email" name="email" id="email" class="form-control">
+                                <input type="email" name="text_username" id="" class="form-control">
                             </div>
                             <div class="mb-3">
                                 <!-- Password -->
                                 <label for="password" class="form-label">Password</label>
-                                <input type="password" name="password" id="password" class="form-control">
+                                <input type="password" name="text_password" id="" class="form-control">
                             </div>
                             <div class="mb-3 text-center">
                                 <!-- Submit -->
