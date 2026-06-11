@@ -44,18 +44,12 @@ $profissao = trim($profissao);
 // 1. Verificar se o campo está vazio
 if (empty($nome)) {
  $erros[] = "O campo Nome é obrigatório.";
- // 4. Depuração: mostrar os erros recolhidos
- echo "<pre>"; // torna mais legível no browser
- print_r($erros);
- echo "</pre>";
+ 
 }
 // 2. Verificar se contém apenas números ou mistura de letras com números
 elseif (preg_match('/\d/', $nome)) {
  $erros[] = "O campo Nome não pode conter números.";
- // 4. Depuração: mostrar os erros recolhidos
- echo "<pre>"; // torna mais legível no browser
- print_r($erros);
- echo "</pre>";
+
 }
 if (empty($morada)) $erros[] = "O campo Morada é obrigatório.";
 // Verificar se o campo está vazio
@@ -113,6 +107,38 @@ else {
  $erros[] = "Data de nascimento inválida.";
  }
 } 
+
+if (empty($erros)) {
+ try {
+ $ligacao = new PDO(
+ "mysql:host=" . MYSQL_HOST . ";dbname=" . MYSQL_DATABASE . ";charset=utf8",  MYSQL_USERNAME,
+MYSQL_PASSWORD
+ );
+ $sql = "INSERT INTO clientes (
+ nome, sexo, data_nascimento, email, telefone,
+ morada, cidade, cliente_ativo, sistema_saude
+ ) VALUES (
+ :nome, :sexo, :dnasc, :email, :telefone,
+ :morada, :cidade, '1', :sistema
+ )";
+ $stmt = $ligacao->prepare($sql);
+ $stmt->execute([
+ ':nome' => $nome,
+ ':sexo' => $sexo,
+ ':dnasc' => $dnasc,
+ ':email' => $email,
+ ':telefone' => $telefone,
+ ':morada' => $morada,
+ ':cidade' => $cidade,
+ ':sistema' => $sistema
+ ]);
+ header("Location: lista.php");
+exit;
+ } catch (PDOException $err) {
+ $erro_sistema = "Erro ao gravar os dados: " . $err->getMessage();
+ }
+ $ligacao = null;
+}
 ?> 
 <?php include '../../includes/header.php'; ?>
 <?php include '../../includes/nav.php'; ?>
@@ -237,6 +263,13 @@ else {
  <li><?= htmlspecialchars($erro) ?></li>
  <?php endforeach; ?>
  </ul>
+ </div>
+<?php endif; ?> 
+
+<?php if (!empty($erro_sistema)): ?>
+ <div class="alert alert-danger">
+ <strong>Erro:</strong>
+ <p><?= htmlspecialchars($erro_sistema) ?></p>
  </div>
 <?php endif; ?> 
                         </form>
