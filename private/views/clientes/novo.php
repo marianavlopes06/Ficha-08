@@ -6,6 +6,7 @@
 // --------------------------------------------------------------------
 require_once __DIR__ . '/../../includes/funcoes.php';
 redirect_if_not_logged(); // Inicia a sessão (se necessário) e verifica se o utilizador está autenticado
+require_once __DIR__ . '/../../includes/validacoes.php';
 
 // Verificar se o formulário foi submetido
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
@@ -21,6 +22,9 @@ $morada = $_POST["morada_cliente"] ?? "";
  $estado = $_POST["estaciv_cliente"] ?? "";
  $sistema = $_POST["campo_opcao"] ?? "";
  $profissao = $_POST["profissao_cliente"] ?? "";
+
+ $erros = validar_nome($nome);
+
  // 2. Imprimir os dados recebidos (para teste)
  echo "<p><strong>Dados recebidos:</strong> Nome: $nome
 | Morada: $morada | Código Postal: $cp | Cidade: $cidade
@@ -41,7 +45,8 @@ $estado = trim($estado);
 $sistema = trim($sistema);
 $profissao = trim($profissao);
 
-// 1. Verificar se o campo está vazio
+
+/*// 1. Verificar se o campo está vazio
 if (empty($nome)) {
  $erros[] = "O campo Nome é obrigatório.";
  
@@ -51,6 +56,7 @@ elseif (preg_match('/\d/', $nome)) {
  $erros[] = "O campo Nome não pode conter números.";
 
 }
+ */
 if (empty($morada)) $erros[] = "O campo Morada é obrigatório.";
 // Verificar se o campo está vazio
 if (empty($cp)) {
