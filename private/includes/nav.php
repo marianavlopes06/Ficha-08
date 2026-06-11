@@ -1,4 +1,21 @@
 <?php
+
+// Verifica se a sessão ainda não foi iniciada
+if (session_status() == PHP_SESSION_NONE) {
+ session_start(); // Inicia a sessão
+}
+// Verifica se o utilizador está autenticado
+if (!isset($_SESSION['utilizador'])) {
+ // Se não estiver autenticado, redireciona para o formulário de login
+ header('Location: ../public/login.php');
+ exit; // Encerra o script
+}
+// A partir daqui, o utilizador está autenticado
+// Podemos usar livremente os dados da sessão
+$nome = $_SESSION['utilizador'];
+
+
+
 // Verifica se a sessão ainda não foi iniciada
 if (session_status() == PHP_SESSION_NONE) {
     session_start(); // Inicia a sessão
@@ -18,7 +35,7 @@ $nome = $_SESSION['utilizador'];
     <div class="row align-items-center">
         <div class="col-6 d-flex align-items-center p-3">
             <!-- Logo e Nome -->
-            <a href="index.php">
+            <a href="/Ficha%2008/private/home.php">
                 <img src="/Ficha%2008/private/assets/images/gym125_white.png" alt="Logo do ISEP Ginásio" height="50" class="me-3">
             </a>
             <h3 class="mb-0"><?php echo APP_NAME; ?></h3>
@@ -39,7 +56,7 @@ $nome = $_SESSION['utilizador'];
                         <hr class="dropdown-divider">
                     </li>
 
-                    <li><a class="dropdown-item" href="login_form.php"><i
+                    <li><a class="dropdown-item" href="/Ficha%2008/public/logout.php"><i
                                 class="fa-solid fa-right-from-bracket me-2"></i>Sair</a></li>
                 </ul>
 

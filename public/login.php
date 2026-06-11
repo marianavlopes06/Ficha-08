@@ -1,6 +1,6 @@
 <?php
 // Inicia a sessão (necessário para usar $_SESSION)
-session_start();
+
 // Inicializa a variável que irá conter os erros de validação
 $validation_errors = [];
 // --------------------------------------------------------------------
@@ -13,6 +13,9 @@ if (!empty($_SESSION['validation_errors'])) {
     // Remove os erros da sessão para que não apareçam novamente numa recarga de página
     unset($_SESSION['validation_errors']);
 }
+
+
+
 // Inicializa a variável que irá conter erros de servidor
 $server_error = [];
 // Verifica se existe algum erro de servidor guardado na sessão
@@ -22,6 +25,7 @@ if (!empty($_SESSION['server_error'])) {
     // Remove o erro da sessão após ser lido
     unset($_SESSION['server_error']);
 }
+
 ?>
 
 <?php include '../private/includes/header.php'; ?>
@@ -39,7 +43,7 @@ if (!empty($_SESSION['server_error'])) {
                 <div class="row">
                     <div class="col">
                         <!-- Formulário -->
-                        <form action="../private/index.php" method="post">
+                        <form action="../private/processa_login.php" method="post">
                             <div class="mb-3">
                                 <!-- Utilizador -->
                                 <label for="email" class="form-label">Utilizador</label>

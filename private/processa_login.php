@@ -86,26 +86,7 @@ if (!$result['status']) {
 // Guarda o nome de utilizador na sessão para identificar o utilizador autenticado
 $_SESSION['utilizador'] = $username;
 // Agora código da área privada 
+// Redirecionar para a página principal privada
+header('Location: home.php');
+exit;
 ?>
-
-<?php include 'includes/header.php'; ?>
-
-<?php include 'includes/nav.php'; ?>
-
-<div class="container-fluid">
-    <div class="row">
-        <?php include 'includes/sidebar.php'; ?>
-
-        <!-- Conteúdo Principal -->
-        <main class="col-md-9 col-lg-10 p-4">
-            <section>
-                <h2>ISEP Ginásio</h2>
-                <p>Escolhe uma opção no menu lateral para continuar.</p>
-            </section>
-        </main>
-
-
-    </div>
-</div>
-
-<?php include 'includes/footer.php'; ?>
