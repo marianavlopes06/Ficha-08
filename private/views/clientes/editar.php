@@ -6,6 +6,19 @@
 // --------------------------------------------------------------------
 require_once __DIR__ . '/../../includes/funcoes.php';
 redirect_if_not_logged(); // Inicia a sessão (se necessário) e verifica se o utilizador está autenticado
+
+if (!in_array($_SERVER['REQUEST_METHOD'], ['GET', 'POST'])) {
+ header('Location: ' . BASE_URL . '/public/login.php');
+ exit;
+}
+
+// Recolhe o ID do cliente da URL
+$idClient = $_GET['id_cliente'] ?? null;
+if (!$idClient) {
+ header('Location: ' . BASE_URL . '/private/views/clientes/lista.php');
+ exit;
+}
+
 ?> 
 <?php include '../../includes/header.php'; ?>
 <?php include '../../includes/nav.php'; ?>
